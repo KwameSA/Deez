@@ -100,7 +100,7 @@ p{
         width: 0;
     }
     .hero-home{
-        background-image: url(../images/benz.png);
+        background-image: url("../images/benz.png");
         background-position: center top;
     }
     .hero-content{
