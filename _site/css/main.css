@@ -58,8 +58,9 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-.content-container{  
-    flex-grow: 1;
+.content-container{ 
+    display: flex; 
+    flex: 1 1 auto;
     padding-top: 10vh;
     width: 100%;
 }
@@ -106,7 +107,7 @@ p{
     .hero-content{
         color: rgb(0, 0, 0,);
         position: relative;
-        top: 20%;
+        top: 50%;
         text-align: center;
         transform: translate(0, -50%);
     }
@@ -237,6 +238,30 @@ p{
     }
 /* FOOTER STYLES*/
 
+/* COLUMN STYLES*/
+.col-three{
+    display: flex;
+    flex: 1;
+}
+.col{
+    box-sizing: border-box;
+    padding: 2em;
+}
+.col-three .col ~ .col{
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+.col-three .colnav{
+    flex: 0 1 15em;
+}
+.col-three .colcontent{
+    flex: 1 1 0;
+}
+.col-three .colaside{
+    flex: 0 1 20em;
+}
+
+/* COLUMN STYLES*/
+
 /* NAV STYLES */
     .nav-links a{
         font-size: 0.8em;
@@ -271,21 +296,54 @@ p{
     padding: 7vh 4vw;
 }
 .callout-title{
-    flex-basis: 0;
-    flex-grow: 1;
+    flex: 1;
     font-size: 5.75vw;
     text-align: right;
     text-transform: uppercase;
 }
 .callout-copy{
-    font-size: 0,8rem;
-    flex-basis: 45em;
-    flex-shrink: 0;
+    flex: 0 0 45em;
+    font-size: 0.8rem;
     padding: 0 3vw;
 }
 
 /*HOMEPAGE STYLES END*/
 
-/* */
-
-/* */
+/* GALLERY STYLES START*/
+    .gallery-thumbs{
+        height: 90vh;
+        overflow: scroll;
+    }
+    .gallery-thumbs > div {
+        cursor: pointer;
+    }
+    .gallery-thumbs img {
+        box-sizing: border-box;
+        box-shadow: 0 0 0 5px transparent;
+        display: inline-block;
+        margin: 0 0 10px;
+        opacity: 0.5;
+        transition: all 0.5s ease-in-out;
+        width: 100%;
+    }
+    .gallery-thumbs img:hover{
+        box-shadow: 0 0 0 5px #676c74;
+        opacity: 1;
+    }
+    .gallery-thumbs .current img{
+        box-shadow: 0 0 0 5px #676c74;
+        opacity: 1;
+    }
+    .gallery-photo {
+        position: relative;
+    }
+    .gallery-photo img{
+        width: 100%;
+    }
+    .gallery-info{
+        font-size: 0.8rem;
+    }
+    .gallery-info h3{
+        margin: 0 0 1rem;
+    }
+/* GALLERY STYLES END*/
